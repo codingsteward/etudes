@@ -16,11 +16,6 @@ Transmission Control Protocol (TCP)
     - Server acknowledges by sending SYN-ACK packet 
     - Client acknowledges server's packet by sending ACK packet. The connection is established when server receives this.
 
-
-
-
-
-
 Web server socket
 
 1. https://www.youtube.com/watch?v=1HF-UAGcuvs (python)
