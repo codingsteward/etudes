@@ -66,5 +66,3 @@ Questions
 11. Implement list pivoting i.e partition
 12. Add numbers represented in lists (msb comes first or last)
 
-
-
