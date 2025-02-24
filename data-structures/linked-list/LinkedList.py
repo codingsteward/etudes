@@ -85,12 +85,30 @@ class LinkedList:
             curr = curr.next
         curr.next = LinkedNode(x, curr.next)
 
+    def reverse(self):
+        """
+        Reverse linked list in-place, returns new head
+        >>> xs = LinkedList([1, 2, 3, 4])
+        >>> xs.reverse()
+        >>> xs
+        [4, 3, 2, 1]
+        >>> xs.reverse()
+        >>> xs
+        [1, 2, 3, 4]
+        """
+        rev_head, rest = None, self.head
+        while rest:
+            temp = rest.next
+            rest.next = rev_head
+            rev_head = rest
+            rest = temp
+        self.head = rev_head
+
     def __str__(self):
         return str(self.head)
 
     def __repr__(self):
         return str(self.head)
-
 
 if __name__ == "__main__":
     import doctest
