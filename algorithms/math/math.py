@@ -5,6 +5,7 @@ def is_prime(n):
 
 
 def generate_primes(n):
+    """Generate a list of primes up to and including n"""
     primes = [True] * (n+1)
     for i in range(2, n+1):
         if primes[i]:

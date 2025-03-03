@@ -1,0 +1,8 @@
+# Hash
+
+## Direct addressing
+
+
+
+
+## Chaining

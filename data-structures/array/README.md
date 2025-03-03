@@ -33,4 +33,20 @@ Fixed array interface
 No interface provided for adding or not. The array size is fixed based on the x passed in
 
 
+Dynamic array interface
+1. insert/delete at i
+2. insert/delete first
+3. insert/delete last
+
+Special case interface (categorised by removal end)
+1. stack (insert last and pop last)
+2. queue (insert last and pop first)
+
+Stack/queue can be implemented with fixed size array with a pointer
+Or it can also be done in linked list
+
+
+
+
+
 

@@ -16,7 +16,7 @@ class Snake:
         next_coord = self.get_next_coord(direction)
         if is_collision(next_coord):
             return
-        if is_eat_food():
+        if is_eat_food(next_coord):
             self.points += 1
             self.spawn_new_food()
         else:
@@ -25,14 +25,14 @@ class Snake:
     def spawn_new_food() -> None:
         pass
 
-    def is_collision(next_coord) -> bool:
+    def is_collision(self, next_coord: Point) -> bool:
         if (next_coord.x < 0 or next_coord.x >= self.COLS or
             next_coord.y < 0 or next_coord.y >= self.ROWS):
             return True
         if next_coord in self.snake_body:
             return True
-
         return False 
+
     def is_eat_food() -> bool:
         pass
 
