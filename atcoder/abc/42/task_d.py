@@ -72,12 +72,37 @@ def factorial(n):
     print(n)
     return powproduct((p, multiplicity(n, p)) for p in all_primes)
 
+# computes n choose r = n!/(r!(n-r)!)
+# then we want to compute n! first
+# basically compute n x n-1 x n-2 x ... n - r + 1 for numerator
+# denominator is r x r-1 x r-2 x ... x 1
+# O(r + log(MOD))
+
+# 10^5 square cannot.
+     
+
+memo1 = [1] * (H+W)
+#modinverse = [1]
+#for i in range(1, H+W-1):
+    # compute n! % mod
+ #   memo1.append(i * memo1[-1] % MOD)
+  #  modinverse.append(pow(memo1[i], MOD-2, MOD) % MOD)
+
+for i in range(1, H+W):
+    memo1[i] = memo1[i-1] * i % MOD
+modinverse = [1] * (H+W)
+modinverse[-1] = pow(memo1[-1], MOD-2, MOD)
+for i in range(H+W-2, 1, -1):
+    modinverse[i] = modinverse[i+1] * (i+1) % MOD
+
+def combv1(n, r):
+    return (memo1[n] * modinverse[r] % MOD * modinverse[n-r]) % MOD
 
 total = 0
 for b in range(B, W):
-    total += fast_comb(H-A-1+b, b) * fast_comb(A-1+W-b-1, A-1) % MOD
+    total += combv1(H-A-1+b, b) * combv1(A-1+W-b-1, A-1) % MOD
 
-print(total)
+print(total % MOD)
 # matrix = [[0 for _ in range(W)] for _ in range(H)]
 
 # matrix[0][0] = 1

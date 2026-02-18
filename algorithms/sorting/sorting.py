@@ -1,6 +1,4 @@
 # Sorting
-
-
 def selection_sort(A: list[int]) -> None:
     "Maintain sorted array at the end, find max and swap rightwards"
     for i in range(len(A)-1, -1, -1):
