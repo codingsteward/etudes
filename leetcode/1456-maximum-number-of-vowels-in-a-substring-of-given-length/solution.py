@@ -9,7 +9,7 @@ class Solution:
             max_vowel = max(max_vowel, vowel_count)
         return max_vowel 
         
-    def maVowels(self, s: str, k: int) -> int:
+    def maxVowels(self, s: str, k: int) -> int:
         vowels = {'a', 'e', 'i', 'o', 'u'}
 
         # build a window of size k first
